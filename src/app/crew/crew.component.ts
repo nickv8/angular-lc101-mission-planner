@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { forEach } from '@angular/router/src/utils/collection';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-crew',
@@ -19,7 +21,9 @@ export class CrewComponent implements OnInit {
   }
 
   add(memberName: string, isFirst: boolean) {
-    this.crew.push({name: memberName, firstMission: isFirst});
+
+    this.crew.push({ name: memberName, firstMission: isFirst });
+    
   }
 
   remove(member: object) {
